@@ -1,5 +1,7 @@
 package com.Separion.MovieApi.TvShow;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 
@@ -22,15 +24,16 @@ public class TvShow {
     private String type;
     private String language;
     private String status;
-    private String runtime;
+    private Integer runtime;
+    @JsonFormat(pattern="dd--MM-yyyy", shape = JsonFormat.Shape.STRING)
     private LocalDate premiered;
     private String officialSite;
-    private LocalDate schedule;
+
 
     public TvShow() {
     }
 
-    public TvShow(Long id, String url, String name, String type, String language, String status, String runtime, LocalDate premiered, String officialSite, LocalDate schedule) {
+    public TvShow(Long id, String url, String name, String type, String language, String status, Integer runtime, LocalDate premiered, String officialSite) {
         this.id = id;
         this.url = url;
         this.name = name;
@@ -40,10 +43,10 @@ public class TvShow {
         this.runtime = runtime;
         this.premiered = premiered;
         this.officialSite = officialSite;
-        this.schedule = schedule;
+
     }
 
-    public TvShow(String url, String name, String type, String language, String status, String runtime, LocalDate premiered, String officialSite, LocalDate schedule) {
+    public TvShow(String url, String name, String type, String language, String status, Integer runtime, LocalDate premiered, String officialSite) {
         this.url = url;
         this.name = name;
         this.type = type;
@@ -52,7 +55,7 @@ public class TvShow {
         this.runtime = runtime;
         this.premiered = premiered;
         this.officialSite = officialSite;
-        this.schedule = schedule;
+
     }
 
     public Long getId() {
@@ -103,11 +106,11 @@ public class TvShow {
         this.status = status;
     }
 
-    public String getRuntime() {
+    public Integer getRuntime() {
         return runtime;
     }
 
-    public void setRuntime(String runtime) {
+    public void setRuntime(Integer runtime) {
         this.runtime = runtime;
     }
 
@@ -127,13 +130,7 @@ public class TvShow {
         this.officialSite = officialSite;
     }
 
-    public LocalDate getSchedule() {
-        return schedule;
-    }
 
-    public void setSchedule(LocalDate schedule) {
-        this.schedule = schedule;
-    }
 
     @Override
     public String toString() {
@@ -147,7 +144,7 @@ public class TvShow {
                 ", runtime='" + runtime + '\'' +
                 ", premiered=" + premiered +
                 ", officialSite='" + officialSite + '\'' +
-                ", schedule=" + schedule +
+
                 '}';
     }
 }

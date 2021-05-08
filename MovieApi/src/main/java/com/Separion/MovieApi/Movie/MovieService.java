@@ -28,7 +28,7 @@ public class MovieService {
         Optional<Movie> movieOptional = movieRepository
                 .findMovieByTitle(movie.getTitle());
         if (movieOptional.isPresent()) {
-            throw  new IllegalStateException("Movie exists");
+            throw  new IllegalStateException("Movie already exists in db");
         }
         movieRepository.save(movie);
 

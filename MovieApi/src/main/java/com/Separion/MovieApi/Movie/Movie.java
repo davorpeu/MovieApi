@@ -2,8 +2,12 @@ package com.Separion.MovieApi.Movie;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.time.LocalDate;
+
+
 
 @Entity
 @Table
@@ -22,13 +26,13 @@ public class Movie {
     private String title;
     private Integer year;
     private String rated;
-//    @JsonFormat(pattern="dd--MM-yyyy")
+//    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd.MM.yyyy")
     private LocalDate released;
     private String runtime;
     private String genre;
     private String director;
     private String writer;
-    private String actor;
+    private String actors;
     private String plot;
     private String language;
     private String poster;
@@ -37,7 +41,7 @@ public class Movie {
     public Movie() {
     }
 
-    public Movie(Long id, String title, Integer year, String rated, LocalDate released, String runtime, String genre, String director, String writer, String actor, String plot, String language, String poster, String type) {
+    public Movie(Long id, String title, Integer year, String rated, LocalDate released, String runtime, String genre, String director, String writer, String actors, String plot, String language, String poster, String type) {
         this.id = id;
         this.title = title;
         this.year = year;
@@ -47,14 +51,14 @@ public class Movie {
         this.genre = genre;
         this.director = director;
         this.writer = writer;
-        this.actor = actor;
+        this.actors = actors;
         this.plot = plot;
         this.language = language;
         this.poster = poster;
         this.type = type;
     }
 
-    public Movie(String title, Integer year, String rated, LocalDate released, String runtime, String genre, String director, String writer, String actor, String plot, String language, String poster, String type) {
+    public Movie(String title, Integer year, String rated, LocalDate released, String runtime, String genre, String director, String writer, String actors, String plot, String language, String poster, String type) {
         this.title = title;
         this.year = year;
         this.rated = rated;
@@ -63,7 +67,7 @@ public class Movie {
         this.genre = genre;
         this.director = director;
         this.writer = writer;
-        this.actor = actor;
+        this.actors = actors;
         this.plot = plot;
         this.language = language;
         this.poster = poster;
@@ -142,12 +146,12 @@ public class Movie {
         this.writer = writer;
     }
 
-    public String getActor() {
-        return actor;
+    public String getActors() {
+        return actors;
     }
 
-    public void setActor(String actor) {
-        this.actor = actor;
+    public void setActors(String actor) {
+        this.actors = actor;
     }
 
     public String getPlot() {
@@ -194,7 +198,7 @@ public class Movie {
                 ", genre='" + genre + '\'' +
                 ", director='" + director + '\'' +
                 ", writer='" + writer + '\'' +
-                ", actor='" + actor + '\'' +
+                ", actor='" + actors + '\'' +
                 ", plot='" + plot + '\'' +
                 ", language='" + language + '\'' +
                 ", poster='" + poster + '\'' +

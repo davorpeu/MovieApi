@@ -1,9 +1,8 @@
 package com.Separion.MovieApi.TvShow;
 
+import com.Separion.MovieApi.Movie.Movie;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,5 +22,10 @@ public class TvShowController {
     @GetMapping
     public List<TvShow> getTvShows(){
         return tvShowService.getTvShows();
+    }
+
+    @PostMapping
+    public void addNewTvShow(@RequestBody TvShow tvShow){
+        tvShowService.addNewTvShow(tvShow);
     }
 }

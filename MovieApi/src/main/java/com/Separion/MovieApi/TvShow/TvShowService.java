@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class TvShowService {
@@ -26,6 +27,17 @@ public class TvShowService {
 
         );
     }
+
+    public void addNewTvShow(TvShow tvShow) {
+        Optional<TvShow> tvShowOptional = tvshowRepository
+                .findTvShowByName(tvShow.getName());
+        if (tvShowOptional.isPresent()) {
+            throw  new IllegalStateException("show already exists in db");
+        }
+        tvshowRepository.save(tvShow);
+
+    }
+
 }
 
 
