@@ -26,8 +26,7 @@ public class Movie {
     private String title;
     private Integer year;
     private String rated;
-//    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd.MM.yyyy")
-    private LocalDate released;
+
     private String runtime;
     private String genre;
     private String director;
@@ -41,12 +40,12 @@ public class Movie {
     public Movie() {
     }
 
-    public Movie(Long id, String title, Integer year, String rated, LocalDate released, String runtime, String genre, String director, String writer, String actors, String plot, String language, String poster, String type) {
+    public Movie(Long id, String title, Integer year, String rated, String runtime, String genre, String director, String writer, String actors, String plot, String language, String poster, String type) {
         this.id = id;
         this.title = title;
         this.year = year;
         this.rated = rated;
-        this.released = released;
+
         this.runtime = runtime;
         this.genre = genre;
         this.director = director;
@@ -58,11 +57,11 @@ public class Movie {
         this.type = type;
     }
 
-    public Movie(String title, Integer year, String rated, LocalDate released, String runtime, String genre, String director, String writer, String actors, String plot, String language, String poster, String type) {
+    public Movie(String title, Integer year, String rated, String runtime, String genre, String director, String writer, String actors, String plot, String language, String poster, String type) {
         this.title = title;
         this.year = year;
         this.rated = rated;
-        this.released = released;
+
         this.runtime = runtime;
         this.genre = genre;
         this.director = director;
@@ -106,13 +105,7 @@ public class Movie {
         this.rated = rated;
     }
 
-    public LocalDate getReleased() {
-        return released;
-    }
 
-    public void setReleased(LocalDate released) {
-        this.released = released;
-    }
 
     public String getRuntime() {
         return runtime;
@@ -193,7 +186,7 @@ public class Movie {
                 ", title='" + title + '\'' +
                 ", year='" + year + '\'' +
                 ", rated='" + rated + '\'' +
-                ", released=" + released +
+
                 ", runtime='" + runtime + '\'' +
                 ", genre='" + genre + '\'' +
                 ", director='" + director + '\'' +

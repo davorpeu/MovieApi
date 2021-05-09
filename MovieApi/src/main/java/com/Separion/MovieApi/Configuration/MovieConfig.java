@@ -17,15 +17,15 @@ import java.util.List;
 @Configuration
 public class MovieConfig {
 
-    @Bean
-    @Primary
+ //   @Bean
+ //   @Primary
     CommandLineRunner commandLineRunner(MovieRepository movieRepository){
         return  args -> {
             Movie sand = new Movie(
                     "Sand",
                     2000,
                     "R",
-                    LocalDate.of(2,2,2),
+
                     "89 min",
                     "Drama",
                     "Matt Palmieri",
@@ -51,7 +51,7 @@ public class MovieConfig {
 
 
     }
-//    @Bean
+    @Bean
     CommandLineRunner commandLineRunner(TvShowRepository tvShowRepository) {
         return args -> {
             TvShow show = new TvShow(
@@ -62,7 +62,6 @@ public class MovieConfig {
                     "English",
                     "Ended",
                     30,
-                    LocalDate.of(2012,04,15),
                     "http://www.hbo.com/girls"
             );
 

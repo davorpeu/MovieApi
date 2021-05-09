@@ -23,6 +23,11 @@ public class MovieController {
         return movieService.getMovies();
     }
 
+    @GetMapping
+    public List<Movie> searchMovies(){
+        return movieService.searchMovies();
+    }
+
     @PostMapping
     public void addNewMovie(@RequestBody Movie movie){
         movieService.addNewMovie(movie);

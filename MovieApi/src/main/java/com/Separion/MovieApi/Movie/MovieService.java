@@ -10,7 +10,8 @@ import java.util.Optional;
 public class MovieService {
 
     private final MovieRepository movieRepository;
-    
+
+
     @Autowired
     public MovieService(MovieRepository movieRepository) {
         this.movieRepository = movieRepository;
@@ -24,6 +25,8 @@ public class MovieService {
                 );
     }
 
+
+
     public void addNewMovie(Movie movie) {
         Optional<Movie> movieOptional = movieRepository
                 .findMovieByTitle(movie.getTitle());
@@ -33,4 +36,6 @@ public class MovieService {
         movieRepository.save(movie);
 
     }
+
+
 }

@@ -25,15 +25,14 @@ public class TvShow {
     private String language;
     private String status;
     private Integer runtime;
-    @JsonFormat(pattern="dd--MM-yyyy", shape = JsonFormat.Shape.STRING)
-    private LocalDate premiered;
+
     private String officialSite;
 
 
     public TvShow() {
     }
 
-    public TvShow(Long id, String url, String name, String type, String language, String status, Integer runtime, LocalDate premiered, String officialSite) {
+    public TvShow(Long id, String url, String name, String type, String language, String status, Integer runtime, String officialSite) {
         this.id = id;
         this.url = url;
         this.name = name;
@@ -41,19 +40,18 @@ public class TvShow {
         this.language = language;
         this.status = status;
         this.runtime = runtime;
-        this.premiered = premiered;
         this.officialSite = officialSite;
 
     }
 
-    public TvShow(String url, String name, String type, String language, String status, Integer runtime, LocalDate premiered, String officialSite) {
+    public TvShow(String url, String name, String type, String language, String status, Integer runtime, String officialSite) {
         this.url = url;
         this.name = name;
         this.type = type;
         this.language = language;
         this.status = status;
         this.runtime = runtime;
-        this.premiered = premiered;
+
         this.officialSite = officialSite;
 
     }
@@ -114,13 +112,6 @@ public class TvShow {
         this.runtime = runtime;
     }
 
-    public LocalDate getPremiered() {
-        return premiered;
-    }
-
-    public void setPremiered(LocalDate premiered) {
-        this.premiered = premiered;
-    }
 
     public String getOfficialSite() {
         return officialSite;
@@ -142,7 +133,6 @@ public class TvShow {
                 ", language='" + language + '\'' +
                 ", status='" + status + '\'' +
                 ", runtime='" + runtime + '\'' +
-                ", premiered=" + premiered +
                 ", officialSite='" + officialSite + '\'' +
 
                 '}';
